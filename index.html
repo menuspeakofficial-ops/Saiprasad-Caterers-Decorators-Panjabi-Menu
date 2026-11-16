@@ -520,7 +520,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--saffron);box-shadow:0
 
       <div class="hero-badge"><i class="fas fa-fire"></i> Complete Catering &amp; Live Counters</div>
       <h1 class="hero-title">Grand Feast.<br><span class="highlight">Custom Catering</span> Menu.</h1>
-      <p class="hero-sub">Build your complete catering package — select from Main Course, Maharashtra Specials, Live Chaat &amp; Chinese Stalls, Mocktails, and Exotic Desserts, then request your quotation directly on WhatsApp.</p>
+      <p class="hero-sub">Build your complete catering package — select from Welcome Drinks, Starters, Main Course, Maharashtra Specials, Live Chaat &amp; Chinese Stalls, and Exotic Desserts, then request your quotation directly on WhatsApp.</p>
       <div class="hero-cta">
         <button class="btn-primary" id="heroMenuBtn"><i class="fas fa-book-open"></i> Explore Full Menu</button>
       </div>
@@ -539,7 +539,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--saffron);box-shadow:0
 
     <div class="search-wrapper">
       <i class="fas fa-search"></i>
-      <input type="text" id="searchInput" placeholder="Search dishes (e.g. Paneer Tikka, Pani Puri, Puran Poli, Mocktails, Pizza...)" aria-label="Search menu">
+      <input type="text" id="searchInput" placeholder="Search dishes (e.g. Paneer Tikka, Mocktails, Fresh Juice, Puran Poli...)" aria-label="Search menu">
       <button id="searchBtn">Search</button>
     </div>
 
@@ -562,7 +562,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--saffron);box-shadow:0
           <li><i class="fas fa-check-circle"></i> Green Chatni</li>
           <li><i class="fas fa-check-circle"></i> Crockery &amp; Cutlery</li>
           <li><i class="fas fa-check-circle"></i> Paper Napkins &amp; Table Cover</li>
-          <li><i class="fas fa-info-circle"></i> <strong>Rate List Slabs:</strong> For 50 to 150 persons &amp; Above 150 persons</li>
+          <!-- <li><i class="fas fa-info-circle"></i> <strong>Rate List Slabs:</strong> For 50 to 150 persons &amp; Above 150 persons</li> -->
         </ul>
       </div>
       <div class="info-box">
@@ -652,8 +652,82 @@ input:focus,select:focus,textarea:focus{border-color:var(--saffron);box-shadow:0
   /* ============ CONFIG ============ */
   const WHATSAPP_NUMBER = '919867782023';
 
-  /* ============ CATERING MENU DATA (FROM BROCHURE) ============ */
+  /* ============ CATERING MENU DATA ============ */
   const menuSections = [
+    /* -------- WELCOME DRINKS (SEPARATE CARDS: A, B, C) -------- */
+    {
+      id: 'welcome_drink_a',
+      group: 'package',
+      badge: 'Welcome Drink · Option A',
+      rule: 'Traditional Refreshers',
+      title: 'Welcome Drink 🌺 · Option A (Desi Coolers)',
+      subtitle: 'Traditional Maharashtrian & Indian summer coolers',
+      items: [
+        { name: 'Kokam' },
+        { name: 'Avala' },
+        { name: 'Limbu' },
+        { name: 'Kairi Panha' },
+        { name: 'Jaljeera' }
+      ]
+    },
+    {
+      id: 'welcome_drink_b',
+      group: 'package',
+      badge: 'Welcome Drink · Option B',
+      rule: 'Fresh Juice',
+      title: 'Welcome Drink 🌺 · Option B (Fresh Juice)',
+      subtitle: 'Freshly extracted seasonal fruit juices',
+      items: [
+        { name: 'Orange Juice' },
+        { name: 'Mango Juice' },
+        { name: 'Pineapple Juice' },
+        { name: 'Watermelon Juice' },
+        { name: 'Kiwi Juice' },
+        { name: 'Avocado Juice' },
+        { name: 'Lichi Peru Juice' },
+        { name: 'Strawberry Juice' }
+      ]
+    },
+    {
+      id: 'welcome_drink_c',
+      group: 'package',
+      badge: 'Welcome Drink · Option C',
+      rule: 'Mocktails',
+      title: 'Welcome Drink 🌺 · Option C (Mocktails)',
+      subtitle: 'Refreshing signature party mocktails',
+      items: [
+        { name: 'Blue Curacao' },
+        { name: 'Mojito' },
+        { name: 'Piña Colada' },
+        { name: 'Fruit Punch' },
+        { name: 'Strawberry Delight' },
+        { name: 'Watermelon Cooler' },
+        { name: 'Mango Delight' }
+      ]
+    },
+
+    /* -------- STARTERS -------- */
+    {
+      id: 'starters',
+      group: 'package',
+      badge: 'Starter',
+      rule: 'Hot Appetizers',
+      title: 'Starters',
+      subtitle: 'Crispy paneer starters, tikkis, balls & mini bites',
+      items: [
+        { name: 'Paneer Tikka' },
+        { name: 'Paneer Chilli' },
+        { name: 'Paneer Pakoda' },
+        { name: 'Paneer 65' },
+        { name: 'Harabhari Tikki' },
+        { name: 'Cheese Corn Ball' },
+        { name: 'Mini Batata Vada' },
+        { name: 'Mini Samosa' },
+        { name: 'Chinese Samosa' },
+        { name: 'Cocktail Samosa' }
+      ]
+    },
+
     /* -------- MAIN MENU & SPECIALS -------- */
     {
       id: 'maharashtra',
@@ -908,30 +982,6 @@ input:focus,select:focus,textarea:focus{border-color:var(--saffron);box-shadow:0
       items: [
         { name: 'Paneer Tikka', price: 25 }, { name: 'Mushroom Tikka', price: 25 },
         { name: 'Veg. Sheekh Kabab', price: 25 }, { name: 'Malai Kabab', price: 25 }
-      ]
-    },
-    {
-      id: 'beverages_extra',
-      group: 'extra',
-      badge: 'Extra · Juice & Mocktails',
-      rule: '₹20 – ₹30 / head',
-      title: 'Hot Beverages, Fresh Fruit, Juice & Mocktails',
-      subtitle: 'Welcome drinks, mocktails (Any One) & hot beverages',
-      items: [
-        { name: 'Sp. Kesar Pista Kadai Milk', price: 25 },
-        { name: 'Espresso Coffee', price: 20 },
-        { name: 'Fresh Fruit Counter (Seasonal Five Item Serve)', price: 25 },
-        { name: 'Mosambi Juice (Mobile)', price: 30 },
-        { name: 'Orange Juice (Mobile)', price: 30 },
-        { name: 'Ganga Jamuna Juice (Mobile)', price: 30 },
-        { name: 'Cocktail Juice (Mobile)', price: 30 },
-        { name: 'Pineapple Juice (Mobile)', price: 30 },
-        { name: 'Water Melon Juice (Mobile)', price: 30 },
-        { name: 'Cold Drinks 3 Flavours', price: 20 },
-        { name: 'Fruit Punch (Mocktail)', price: 30 },
-        { name: 'Coconut Punch (Mocktail)', price: 30 },
-        { name: 'Strawberry Punch (Mocktail)', price: 30 },
-        { name: 'Litchi Punch (Mocktail)', price: 30 }
       ]
     },
     {
